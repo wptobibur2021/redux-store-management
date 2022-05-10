@@ -1,26 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useAPI from '../../useAPI/useAPI.js'
-import { allProducts } from '../../Redux/productSlice'
 import { Container, Row, Col, Form } from 'react-bootstrap'
 import Single from './Single.jsx'
 const Products = () => {
     const [searchText, setSearchText] = useState('')
     const dispatch = useDispatch();
-    const newproducts = useSelector((state) => state.products.products)
+    const products = useSelector((state) => state.products.products[0])
     const { getProducts } = useAPI();
-    const [products, setProducts] = useState([])
     const searchHandle = (e) => {
         setSearchText(e.target.value)
     }
     const searchProduct = products?.filter((product) => product.rocket.rocket_name.toLowerCase() === searchText.toLowerCase())
-    console.log('Search Product: ', searchProduct)
     useEffect(() => {
-        dispatch(allProducts(products))
-        getProducts(setProducts)
-    }, [products.length < 10])
+        getProducts(dispatch)
+    }, [])
 
-    console.log('newproducts:', newproducts)
+    console.log('newproducts:', products)
     console.log('search Value: ', searchText)
     return (
         <div className="missionArea">
@@ -47,7 +43,6 @@ const Products = () => {
                     }
                 </Row>
             </Container>
-
         </div>
     )
 }
