@@ -1,10 +1,11 @@
-# How to run another computer?
+# Redux Store Management React App
 
+## How to run locally?
 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+### Steps Below
+  1.  Copy this command (git clone https://github.com/wptobibur2021/redux-store-management.git) and where you set up the project open cmd past that command.
+  2.  Open the redux-store-management folder.
+  3.  Open cmd run this command npm install than run npm start.  
 
 In the project directory, you can run:
 
