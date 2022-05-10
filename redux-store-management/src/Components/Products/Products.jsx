@@ -15,9 +15,6 @@ const Products = () => {
     useEffect(() => {
         getProducts(dispatch)
     }, [])
-
-    console.log('newproducts:', products)
-    console.log('search Value: ', searchText)
     return (
         <div className="missionArea">
             <Container >

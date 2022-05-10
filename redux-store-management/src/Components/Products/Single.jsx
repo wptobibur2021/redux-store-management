@@ -20,8 +20,14 @@ const Single = ({ item }) => {
                         {details?.slice(0, 30)}
                     </Card.Text>
                     <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-                        <a href={links.video_link} target='_blank'><MdVideoLibrary /></a>
-                        <a href={links.wikipedia} target='_blank'><MdLink /></a>
+                        {
+                            links?.video_link ? (<a href={links.video_link} target='_blank'><MdVideoLibrary /></a>) : ''
+                        }
+                        {
+                            links?.video_link ? (<a href={links.wikipedia} target='_blank'><MdLink /></a>) : ''
+                        }
+
+
                     </div>
                 </Card.Body>
             </Card>
